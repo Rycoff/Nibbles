@@ -16,7 +16,7 @@ sudo nmap -sV -sA 10.129.96.84
 
 ### Scan Explanation
 
--sV enables version detection, allowing Nmap to identify service versions running on open ports. -A enables aggressive scanning, which includes OS detection, version detection, script scanning, and traceroute in a single command.
+- `-sV` enables version detection, allowing Nmap to identify service versions running on open ports. -A enables aggressive scanning, which includes OS detection, version detection, script scanning, and traceroute in a single command.
 
 This type of scan provides a more detailed overview of the target compared to a basic service scan. It is particularly useful during the initial enumeration phase, as it helps identify not only running services and their versions, but also potential misconfigurations and attack vectors that can be further investigated.
 
@@ -62,9 +62,9 @@ gobuster dir -u 10.129.96.84/nibbleblog/ -w /usr/share/wordlists/dirb/common.txt
 
 gobuster is a directory brute forcing tool used to discover hidden files and directories on a web server.
 
-- dir tells Gobuster to perform directory enumeration.
-- -u specifies the target URL.
-- -w specifies the wordlist used during the scan.
+- `dir` tells Gobuster to perform directory enumeration.
+- `-u` specifies the target URL.
+- `-w` specifies the wordlist used during the scan.
 
 This scan was performed to identify hidden content and additional attack surface that was not directly accessible from the main webpage.
 
@@ -226,7 +226,7 @@ This command overwrites the existing script content and inserts a reverse shell 
 
 ### Netcat
 
-netcat (nc) was used to create a reverse TCP connection from the target to the attacker machine. This allows the execution of commands on the target system through a remote shell once the connection is established.
+netcat (`nc`) was used to create a reverse TCP connection from the target to the attacker machine. This allows the execution of commands on the target system through a remote shell once the connection is established.
 
 <img width="702" height="106" alt="image" src="https://github.com/user-attachments/assets/6f3c3c98-bd08-4b4c-aaed-a8e42ef45bf8" />
 
@@ -247,10 +247,26 @@ After successfully escalating privileges to NT AUTHORITY\SYSTEM, I retrieved the
 <img width="145" height="113" alt="image" src="https://github.com/user-attachments/assets/62b6d829-dda6-4c2b-b5b7-cd55c59d5b33" />
 
 ## 7. Lessons Learned
-This machine highlighted the importance of thorough web enumeration, as hidden directories and files led directly to the discovery of the underlying CMS.
+- This machine highlighted the importance of thorough web enumeration, as hidden directories and files led directly to the discovery of the underlying CMS.
 
-A key takeaway was that seemingly simple misconfigurations, such as an exposed admin panel and weak authentication, can quickly lead to full system compromise when combined with known vulnerabilities.
+- A key takeaway was that seemingly simple misconfigurations, such as an exposed admin panel and weak authentication, can quickly lead to full system compromise when combined with known vulnerabilities.
 
-Another important lesson was the value of properly verifying application versions and researching known exploits before attempting manual exploitation.
+- Another important lesson was the value of properly verifying application versions and researching known exploits before attempting manual exploitation.
 
-Finally, privilege escalation often depends on careful system enumeration, as misconfigured permissions (such as writable scripts executed with elevated privileges) can provide a direct path to root access.
+- Finally, privilege escalation often depends on careful system enumeration, as misconfigured permissions (such as writable scripts executed with elevated privileges) can provide a direct path to root access.
+
+
+## 8. Mitigation Recommendations
+
+The initial compromise was possible due to weak authentication controls and the ability to enumerate valid usernames. Although a login blacklist mechanism was implemented, it did not sufficiently prevent credential guessing attacks.
+
+To improve security, the following measures are recommended:
+
+- Enforce strong password policies, including minimum length and complexity requirements.
+- Implement multi-factor authentication (MFA) for administrative accounts.
+- Prevent username enumeration by returning generic authentication error messages.
+- Replace blacklist-based controls with effective rate limiting and account lockout mechanisms.
+- Monitor authentication logs for brute-force and password-spraying attempts.
+- Conduct regular security reviews of web applications to identify authentication weaknesses.
+
+These controls reduce the likelihood of unauthorized access through credential guessing and account enumeration attacks.
