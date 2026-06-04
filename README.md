@@ -1,5 +1,12 @@
 # HTB - Nibbles
 
+### Machine Information
+
+- Difficulty: Easy
+- OS: Linux
+- Status: Retired
+- Access: VIP
+
 This write-up documents the exploitation of the retired Hack The Box machine Nibbles. The objective is to demonstrate a structured penetration testing methodology, covering the full attack chain from initial reconnaissance to privilege escalation.
 
 The machine is approached from an attacker’s perspective, focusing on systematic enumeration, vulnerability identification, and practical exploitation techniques. Each step is documented with an emphasis on reasoning and methodology rather than just commands and outputs.
