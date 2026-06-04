@@ -270,3 +270,7 @@ To improve security, the following measures are recommended:
 - Conduct regular security reviews of web applications to identify authentication weaknesses.
 
 These controls reduce the likelihood of unauthorized access through credential guessing and account enumeration attacks.
+
+## 9. Key Takeaway
+
+Authentication security is more than just brute-force protection.
