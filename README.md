@@ -90,25 +90,25 @@ The README file contained information related to the Nibbleblog installation. Th
 
 #### Content
 
-The /content directory appeared to contain files and resources used by the web application, including uploaded content and plugin-related data. This indicated that the directory could potentially expose sensitive information useful for further enumeration.
+The `/content` directory appeared to contain files and resources used by the web application, including uploaded content and plugin-related data. This indicated that the directory could potentially expose sensitive information useful for further enumeration.
 
 <img width="686" height="410" alt="image" src="https://github.com/user-attachments/assets/387646cc-2503-408c-bdd9-cc57bb91beb0" />
 
 #### Private
 
-The /private directory suggested the presence of restricted or internal application data. Although direct access was limited, the directory itself indicated that sensitive files may exist on the server.
+The `/private` directory suggested the presence of restricted or internal application data. Although direct access was limited, the directory itself indicated that sensitive files may exist on the server.
 
 <img width="746" height="619" alt="image" src="https://github.com/user-attachments/assets/315b2f29-4367-4501-8cd9-9b46683c6067" />
 
 #### config.xml
 
-The config.xml file contained configuration-related information for the application. Configuration files are particularly valuable during enumeration because they may expose usernames, paths, or other sensitive application details.
+The `config.xml` file contained configuration-related information for the application. Configuration files are particularly valuable during enumeration because they may expose usernames, paths, or other sensitive application details.
 
 <img width="864" height="951" alt="image" src="https://github.com/user-attachments/assets/1152e251-d25e-43fa-9ce3-7adf419f9620" />
 
 #### admin.php
 
-Navigating to admin.php revealed an administrative login panel for the Nibbleblog application.
+Navigating to `admin.php` revealed an administrative login panel for the Nibbleblog application.
 
 <img width="1254" height="628" alt="image" src="https://github.com/user-attachments/assets/20b9836e-c1ca-4ae7-8577-21f123e589bd" />
 
@@ -221,7 +221,7 @@ unzip <file>.zip
 
 ### Script Modification
 
-During enumeration, a writable script named monitor.sh was identified.
+During enumeration, a writable script named `monitor.sh` was identified.
 
 To gain a reverse shell as root, the script was modified by injecting a reverse shell payload using the following command:
 
