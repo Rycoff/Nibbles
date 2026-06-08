@@ -23,7 +23,8 @@ sudo nmap -sV -sA 10.129.96.84
 
 ### Scan Explanation
 
-- `-sV` enables version detection, allowing Nmap to identify service versions running on open ports. -A enables aggressive scanning, which includes OS detection, version detection, script scanning, and traceroute in a single command.
+- `-sV` enables version detection, allowing Nmap to identify service versions running on open ports.
+- `-A` enables aggressive scanning, which includes OS detection, version detection, script scanning, and traceroute in a single command.
 
 This type of scan provides a more detailed overview of the target compared to a basic service scan. It is particularly useful during the initial enumeration phase, as it helps identify not only running services and their versions, but also potential misconfigurations and attack vectors that can be further investigated.
 
