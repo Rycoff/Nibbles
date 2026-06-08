@@ -84,7 +84,7 @@ The scan revealed the /nibbleblog directory, indicating that the target was host
 
 #### README
 
-The README file contained information related to the Nibbleblog installation. This helped confirm that the target was running the Nibbleblog CMS and provided additional context about the application.
+The `README` file contained information related to the Nibbleblog installation. This helped confirm that the target was running the Nibbleblog CMS and provided additional context about the application.
 
 <img width="1894" height="894" alt="image" src="https://github.com/user-attachments/assets/14f98308-4625-4654-89a8-c7868bf5a57d" />
 
